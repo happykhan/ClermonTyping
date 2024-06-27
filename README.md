@@ -43,6 +43,7 @@ __http://clermontyping.iame-research.center/.__
 	* tidyr
 	* stringr
 	* knitr
+        * rmarkdown
 
 ### Installation
 ...

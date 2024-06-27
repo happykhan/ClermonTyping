@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 """
 Current Version - 23.06: Jun 2023
         23.06:
@@ -105,7 +105,7 @@ def blast_parser(xml_content, min_size):
         all_primers = Primers()
         query_name = blast_record.query.split("_")
         if query_name[0] not in all_primers.names:
-            logger.error("Error in primer name: "+blast_record.query+" . Sould be one of "+str(all_primers.names.keys()))
+            logger.error("Error in primer name: "+blast_record.query+" . Sould be one of "+ str(all_primers.names.keys()))
             break
         if query_name[1] not in ['F', 'R']:
             logger.error("Error in primer name: "+blast_record.query+" . Sould be _F or _R for forward and reverse.")
@@ -331,7 +331,7 @@ if __name__ == "__main__":
     if ( log_level == 'DEBUG' ):
         logging_std_format = logging_debug_format
     logging_datefmt = '%d/%m/%Y - %H:%M:%S'
-    if ( args.log_file != None ):
+    if ( args.log_file is not None ):
         logging.basicConfig( format = logging_std_format,
                              datefmt = logging_datefmt,
                              filename = args.log_file,
