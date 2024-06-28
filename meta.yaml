@@ -1,0 +1,44 @@
+package:
+  name: "clermontyping"
+  version: "24.02"
+  
+source:
+  url: "https://github.com/happykhan/ClermonTyping/archive/refs/tags/24.02.tar.gz"
+  sha256: 89f36b76e17b1102adb9933e96f8e15e0f5e915b671ccd07f70a9bce3f073e5b
+
+build:
+  number: 0
+  script: "chmod +x clermonTyping.sh"
+
+requirements:
+  host:
+    - python >=3.8
+  run:
+    - python >=3.8
+    - blast
+    - biopython
+    - r-readr
+    - r-dplyr
+    - r-tidyr
+    - r-stringr
+    - r-knitr
+    - r-rmarkdown
+    - r-markdown
+    - r-pandoc
+    - mash
+
+test:
+  commands:
+    - clermonTyping.sh -h
+
+about:
+  home: "https://github.com/happykhan/ClermonTyping"
+  summary: " determine the Clermont  E coli phylotype"
+  license: GPLv3
+  license_family: GPL
+  license_file: 'LICENSE'
+  description: 'Determines the Clermont phylotype of a given E coli strain by performing in silico quadriplex PCR'
+
+extra:
+  recipe-maintainers:
+    - happykhan
